@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class Aluno(models.Model):
 
     nome = models.CharField(
@@ -8,13 +8,13 @@ class Aluno(models.Model):
         verbose_name='Nome',
     )
 
-    idade = models.CharField(
-        max_length=5,
+    idade = models.IntegerField(
+        max_length=255,
         verbose_name='Idade',
     )
 
     email = models.EmailField(
-        max_length=50,
+        max_length=255,
         verbose_name='Email',
     )
 

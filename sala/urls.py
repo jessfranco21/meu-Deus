@@ -18,12 +18,15 @@ from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
 from aluno.views import AlunoViewSet
+from professor.views import ProfessorViewSet
 
 
 router = routers.DefaultRouter()
 router.register(r'alunos', AlunoViewSet)
+router.register(r'professor', ProfessorViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+
 ]

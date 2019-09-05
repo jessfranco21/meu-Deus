@@ -19,6 +19,7 @@ from django.conf.urls import include
 from rest_framework import routers
 from aluno.views import AlunoViewSet
 from professor.views import ProfessorViewSet
+from rest_framework.authtoken.views import obtain_auth_token
 
 
 router = routers.DefaultRouter()
@@ -28,5 +29,6 @@ router.register(r'professor', ProfessorViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('auth-api/', obtain_auth_token)
 
 ]

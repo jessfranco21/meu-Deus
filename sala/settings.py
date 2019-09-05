@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'aluno',
     'professor',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [

@@ -8,6 +8,6 @@ from professor.serializers import ProfessorSerializer
 
 class ProfessorViewSet(viewsets.ModelViewSet):
     queryset = Professor.objects.all()
-    permission_classes = (IsAuthenticatedOrReadOnly,)
-    authentication_classes = (TokenAuthentication,)
+   # permission_classes = (IsAuthenticatedOrReadOnly,)
+   # authentication_classes = (TokenAuthentication,)
     serializer_class = ProfessorSerializer

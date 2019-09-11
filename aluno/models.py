@@ -1,8 +1,11 @@
 from django.db import models
 
+from professor.models import Professor
+
 
 class Aluno(models.Model):
-
+    object = None
+    objects = None
     nome = models.CharField(
         max_length=255,
         verbose_name='Nome',
@@ -16,6 +19,11 @@ class Aluno(models.Model):
         max_length=255,
         verbose_name='Email',
     )
+    prof_favorito = models.ForeignKey(
+        Professor,
+        on_delete= models.CASCADE,
+        related_name= 'alunos'
+    )
 
     def __str__(self):
-        return self.nome.title()
+        return self.nome

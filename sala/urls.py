@@ -20,13 +20,15 @@ from rest_framework import routers
 from aluno.views import AlunoViewSet
 from professor.views import ProfessorViewSet
 from rest_framework.authtoken.views import obtain_auth_token
-
+from aluno.views import AlunoList, AlunoDetail
 
 router = routers.DefaultRouter()
 router.register(r'alunos', AlunoViewSet)
 router.register(r'professor', ProfessorViewSet)
 
 urlpatterns = [
+    path('alunos', AlunoList.as_view()),
+    path('alunos/<int:id>', AlunoDetail.as_view()),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('auth-api/', obtain_auth_token)

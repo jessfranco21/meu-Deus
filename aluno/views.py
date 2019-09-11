@@ -35,6 +35,7 @@ class AlunoList(views.APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+
 class AlunoDetail(views.APIView):
 
     def get_object(self, id):
